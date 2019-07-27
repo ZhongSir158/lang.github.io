@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、安装和配置1.1 安装 进入http://git-scm.com，点击download，无脑下一步   1.2 配置 在git bash下输入以下两个命令  12git config --global user.name &quot;username&quot; # username为GitHub的用户名git config --global user.email &quot;useremail&quot; # useremail为">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://www.zhongsir.online/2019/07/27/git/index.html">
+<meta property="og:site_name" content="flowerLang-个人博客">
+<meta property="og:description" content="一、安装和配置1.1 安装 进入http://git-scm.com，点击download，无脑下一步   1.2 配置 在git bash下输入以下两个命令  12git config --global user.name &quot;username&quot; # username为GitHub的用户名git config --global user.email &quot;useremail&quot; # useremail为">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://i1.fuimg.com/695321/2e626ffc852a16f2.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/bee7a6d56d9ebc68.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/005e187f019d093d.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/01d87b2e043db2c0.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/19c141a3d96b64aa.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/cba443e456c2f0d6.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/89a856f65f88eda8.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/744687469dd06329.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/e711fb70d8d116d1.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/bb3b7446e6cc377f.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/fdf9c6c3846b9325.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/9b18d5db8361d427.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/bcb1d29bdb8f55d4.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/a9cf09c51293c0a0.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/16f2ebc54fa273a5.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/7b2df18795b7de4f.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/ab26f923f04b0894.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/4fec7a48c516edbd.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/6c94be2b023df5cb.png">
+<meta property="og:image" content="http://i1.fuimg.com/695321/910b0cfc8f5d57f9.png">
+<meta property="og:updated_time" content="2019-07-27T10:05:36.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="一、安装和配置1.1 安装 进入http://git-scm.com，点击download，无脑下一步   1.2 配置 在git bash下输入以下两个命令  12git config --global user.name &quot;username&quot; # username为GitHub的用户名git config --global user.email &quot;useremail&quot; # useremail为">
+<meta name="twitter:image" content="http://i1.fuimg.com/695321/2e626ffc852a16f2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.zhongsir.online/2019/07/27/git/">
+
+
+
+
+
+  <title>git常用命令 | flowerLang-个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">flowerLang-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">花语者</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zhongsir.online/2019/07/27/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowerLang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="flowerLang-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-27T10:15:35+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、安装和配置"><a href="#一、安装和配置" class="headerlink" title="一、安装和配置"></a>一、安装和配置</h2><h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><blockquote>
+<p>进入<a href="http://git-scm.com，点击download，无脑下一步" target="_blank" rel="noopener">http://git-scm.com，点击download，无脑下一步</a></p>
+</blockquote>
+<p><img src="http://i1.fuimg.com/695321/2e626ffc852a16f2.png" alt="http://git-scm.com"></p>
+<h2 id="1-2-配置"><a href="#1-2-配置" class="headerlink" title="1.2 配置"></a>1.2 配置</h2><blockquote>
+<p>在git bash下输入以下两个命令</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"username"</span> <span class="comment"># username为GitHub的用户名</span></span><br><span class="line">git config --global user.email <span class="string">"useremail"</span> <span class="comment"># useremail为GitHub绑定的邮箱</span></span><br></pre></td></tr></table></figure>
+
+<p>配置好账号信息后，输入<code>git config -l</code>或者<code>git config --list</code>查看配置</p>
+<h2 id="二、创建仓库"><a href="#二、创建仓库" class="headerlink" title="二、创建仓库"></a>二、创建仓库</h2><p>安装配置好git后，接下来便是使用咯，首先便是创建仓库。其中主要分为两种：初始化一个仓库、克隆他人的仓库</p>
+<h3 id="2-1-初始化"><a href="#2-1-初始化" class="headerlink" title="2.1 初始化"></a>2.1 初始化</h3><blockquote>
+<p>git 仓库初始化常用的技巧</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 直接创建一个目录，在该目录下输入</span></span><br><span class="line">git init</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者在init后跟一个目录名</span></span><br><span class="line">git init demo # demo会在当前路径下创建并初始化为仓库</span><br></pre></td></tr></table></figure>
+
+<p>仓库初始化后，该目录会生成<code>.git</code>目录，可以输入<code>ls -la</code>查看仓库下所有的文件及文件夹</p>
+<h3 id="2-2-克隆"><a href="#2-2-克隆" class="headerlink" title="2.2 克隆"></a>2.2 克隆</h3><blockquote>
+<p>git clone常用技巧</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 直接克隆，会在当前路径生成一个仓库</span></span><br><span class="line">git clone url # url为要克隆仓库的url</span><br><span class="line"><span class="meta">#</span><span class="bash"> 后接一个目录名，会将url中的仓库名改为自定义目录名</span></span><br><span class="line">git clone url demo # url为要克隆仓库的url demo为自定义目录名</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、基本用法"><a href="#三、基本用法" class="headerlink" title="三、基本用法"></a>三、基本用法</h2><h3 id="3-1-状态"><a href="#3-1-状态" class="headerlink" title="3.1 状态"></a>3.1 状态</h3><blockquote>
+<p><code>git status</code>用来查看仓库当前状态，主要可分为以下几个状态</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">状态</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><em><em>Untracked files</em></em></td>
+<td align="center">存在未被追踪的文件</td>
+</tr>
+<tr>
+<td align="center"><em><em>modified</em></em></td>
+<td align="center">存在未被追踪的已经修改的文件</td>
+</tr>
+<tr>
+<td align="center"><em><em>No commits yet</em></em></td>
+<td align="center">还未提交</td>
+</tr>
+<tr>
+<td align="center"><em><em>Nothing to commit,working tree clean.</em></em></td>
+<td align="center">已经没有可提交的文件</td>
+</tr>
+<tr>
+<td align="center"><em><em>Changes to be committed</em></em></td>
+<td align="center">更改已被提交</td>
+</tr>
+</tbody></table>
+<h3 id="3-2-添加跟踪"><a href="#3-2-添加跟踪" class="headerlink" title="3.2 添加跟踪"></a>3.2 添加跟踪</h3><ul>
+<li><code>git add .</code> 、<code>git add *</code> 或 <code>git add -A</code> 将所有修改添加到暂存区</li>
+</ul>
+<h3 id="3-3-提交"><a href="#3-3-提交" class="headerlink" title="3.3 提交"></a>3.3 提交</h3><p><img src="http://i1.fuimg.com/695321/bee7a6d56d9ebc68.png" alt></p>
+<ul>
+<li><code>git commit -m &quot;描述&quot;</code> 提交并写注释</li>
+<li><code>-m</code> 就是给个说明</li>
+</ul>
+<h3 id="3-4-日志和切换版本"><a href="#3-4-日志和切换版本" class="headerlink" title="3.4 日志和切换版本"></a>3.4 日志和切换版本</h3><ul>
+<li><p><code>git log</code> 查看git日志</p>
+<p><img src="http://i1.fuimg.com/695321/005e187f019d093d.png" alt></p>
+<blockquote>
+<p><strong>commit后的字符串</strong>：当前commit的版本ID</p>
+<p><strong>开始的开始</strong>：当前commit版本的说明信息</p>
+</blockquote>
+</li>
+<li><p><code>git log -p</code> 控制输出每个commit具体修改的内容，输出的形式以diff的形式给出</p>
+<p><img src="http://i1.fuimg.com/695321/01d87b2e043db2c0.png" alt></p>
+</li>
+<li><p><code>git checkout id</code> 切换到当初commit id的版本，id可为想要切换commit 的id前7位或者更长</p>
+</li>
+<li><p><code>git checkout -</code> 回退到上一个节点</p>
+</li>
+</ul>
+<h2 id="四、三个状态"><a href="#四、三个状态" class="headerlink" title="四、三个状态"></a>四、三个状态</h2><blockquote>
+<p>仓库中的文件有三个状态：modified(已修改)、staged(已暂存)、commited(已提交)</p>
+<p>commit的内容是暂存区的内容(add操作)，如果add之后有修改了内容，这次修改的内容不会被commit </p>
+</blockquote>
+<h2 id="五、tag标签"><a href="#五、tag标签" class="headerlink" title="五、tag标签"></a>五、tag标签</h2><blockquote>
+<p>当项目有一个比较重要阶段（一个大大版本完成等等）时，希望能将其突出表示。这时，可将该结点标记为一个标签，与标签相关的命令如下。</p>
+</blockquote>
+<h3 id="5-1-git-tag"><a href="#5-1-git-tag" class="headerlink" title="5.1 git tag"></a>5.1 git tag</h3><ul>
+<li><p><code>command1 &amp;&amp; command2</code> 连续执行命令</p>
+<p><img src="http://i1.fuimg.com/695321/19c141a3d96b64aa.png" alt></p>
+</li>
+</ul>
+<ul>
+<li><p><code>git tag -a tagname -m message (id)</code> </p>
+<ul>
+<li>tagname：标签名</li>
+<li>message：该标签的描述信息（与commit中的类似）</li>
+<li>id：commit历史版本的id（默认为当前所处版本id） </li>
+</ul>
+<p><strong>注意事项</strong>：添加了<code>-a</code>属性后，才可以后接<code>-m</code>属性</p>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/cba443e456c2f0d6.png" alt></p>
+<ul>
+<li><ul>
+<li>给v1之前的id(e1a85c7 )添加tag</li>
+<li><code>git log --online</code> 简要显示日志</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/89a856f65f88eda8.png" alt></p>
+<p>​        <img src="http://i1.fuimg.com/695321/744687469dd06329.png" alt></p>
+<ul>
+<li><p><code>git tag</code> 显示仓库标签信息</p>
+<p><img src="http://i1.fuimg.com/695321/e711fb70d8d116d1.png" alt></p>
+</li>
+</ul>
+<h3 id="5-2-git-show"><a href="#5-2-git-show" class="headerlink" title="5.2 git show"></a>5.2 git show</h3><ul>
+<li><code>git show tagname</code> 显示标签详细信息<ul>
+<li>tagname: 标签名称</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/bb3b7446e6cc377f.png" alt></p>
+<ul>
+<li><code>git checkout tagname</code>  回到tag所在版本</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/fdf9c6c3846b9325.png" alt></p>
+<h2 id="六、分支branch"><a href="#六、分支branch" class="headerlink" title="六、分支branch"></a>六、分支branch</h2><blockquote>
+<p>当开发主线项目过程中突然想开发新功能或者修复之前版本遗留bug，但又不想影响主线任务时，创建分支出去处理这些事最好不过。关于分支有以下相关操作</p>
+</blockquote>
+<h3 id="6-1-创建分支"><a href="#6-1-创建分支" class="headerlink" title="6.1 创建分支"></a>6.1 创建分支</h3><ul>
+<li><code>git branch branchname</code><ul>
+<li>branchname：分支名称（默认分支为master）</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-切换分支"><a href="#6-2-切换分支" class="headerlink" title="6.2 切换分支"></a>6.2 切换分支</h3><ul>
+<li><code>git checkout branchname</code><ul>
+<li>branchname：要切换分支名称</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-3-图形化显示"><a href="#6-3-图形化显示" class="headerlink" title="6.3 图形化显示"></a>6.3 图形化显示</h3><ul>
+<li><code>git log --graph</code></li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/9b18d5db8361d427.png" alt></p>
+<h3 id="6-4-创建并切换至分支"><a href="#6-4-创建并切换至分支" class="headerlink" title="6.4 创建并切换至分支"></a>6.4 创建并切换至分支</h3><ul>
+<li><code>git checkout -b branchname</code><ul>
+<li>branchname：要创建分支名称</li>
+</ul>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/bcb1d29bdb8f55d4.png" alt></p>
+<h2 id="七、合并分支"><a href="#七、合并分支" class="headerlink" title="七、合并分支"></a>七、合并分支</h2><blockquote>
+<p>当分支功能开发完毕后，需将该分支合并至主线上，进行磨合，这时，合并分支派上用场，主要命令为<code>git merge</code></p>
+</blockquote>
+<p><strong>注意</strong>：在合并分支前要切换至要合并至分支的分支，例如将rich分支合并至master主干，则应 <code>git checkout master</code> 切换至master主干，再进行合并</p>
+<ul>
+<li><p><code>git merge brachname</code></p>
+<ul>
+<li>branchname：要合并分支名称</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/a9cf09c51293c0a0.png" alt></p>
+</li>
+</ul>
+<p>打开文件</p>
+<p><img src="http://i1.fuimg.com/695321/16f2ebc54fa273a5.png" alt></p>
+<p>可以发现，在尖括号之间是主线和分支之间的区别，由于此处为自己的代码，可以手工修改</p>
+<p><img src="http://i1.fuimg.com/695321/7b2df18795b7de4f.png" alt="1564215598196"></p>
+<p>再次上传就ok了</p>
+<p><img src="http://i1.fuimg.com/695321/ab26f923f04b0894.png" alt></p>
+<p>查看日志</p>
+<p><img src="http://i1.fuimg.com/695321/4fec7a48c516edbd.png" alt></p>
+<h2 id="七、远程仓库"><a href="#七、远程仓库" class="headerlink" title="七、远程仓库"></a>七、远程仓库</h2><blockquote>
+<p>git对于版本管理功能强大，但一旦本地主机出现故障，便功亏一篑。使用远程仓库将本地仓库上传则不会受到主观因素影响。常用的远程仓库为GitHub，因此这里以GitHub为例，演示如何将本地仓库上传至GitHub。</p>
+</blockquote>
+<h3 id="7-1-添加仓库"><a href="#7-1-添加仓库" class="headerlink" title="7.1 添加仓库"></a>7.1 添加仓库</h3><ul>
+<li><p><code>git remote add remoteName url</code> 添加远程仓库</p>
+<ul>
+<li>remoteName：仓库名称</li>
+<li>url：远程仓库的url</li>
+</ul>
+</li>
+<li><p><code>git remote</code> 列出所有远程仓库</p>
+</li>
+<li><p><code>git remote -v</code>  显示远程仓库详细信息</p>
+</li>
+</ul>
+<p><img src="http://i1.fuimg.com/695321/6c94be2b023df5cb.png" alt></p>
+<p>其中fetch为下载地址，使用 <code>git clone url</code> 即可；push则为上传地址。一般为同一个url</p>
+<h3 id="7-2-将本地仓库上传"><a href="#7-2-将本地仓库上传" class="headerlink" title="7.2 将本地仓库上传"></a>7.2 将本地仓库上传</h3><ul>
+<li><code>git push -u remoteName branchName</code> 将本地仓库上传<ul>
+<li>remoteName：远程仓库名称（github）</li>
+<li>brachName：要上传的分支名称（master）</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-3-克隆仓库"><a href="#7-3-克隆仓库" class="headerlink" title="7.3 克隆仓库"></a>7.3 克隆仓库</h3><blockquote>
+<p>已将本地仓库上传远程仓库的情况下，若出现本地仓库丢失，可从远程仓库克隆下来</p>
+</blockquote>
+<ul>
+<li><p><code>git clone url</code> </p>
+<ul>
+<li>url：远程仓库url</li>
+</ul>
+<p>会从远程仓库download到本地主机，但是得注意此时的远程仓库名称不是之前的命名，而是 <code>origin</code> ，所以在push操作时应当注意remoteName。</p>
+</li>
+<li><p><code>git clone url filename</code> </p>
+<ul>
+<li>url：远程仓库url</li>
+<li>filename：重命名远程仓库文件名</li>
+</ul>
+</li>
+</ul>
+<h2 id="八、速查表"><a href="#八、速查表" class="headerlink" title="八、速查表"></a>八、速查表</h2><p><img src="http://i1.fuimg.com/695321/910b0cfc8f5d57f9.png" alt="速查表"></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/27/git/">git常用命令</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 flowerLang 的个人博客">flowerLang</a></p>
+  <p><span>发布时间:</span>2019年07月27日 - 10:07</p>
+  <p><span>最后更新:</span>2019年07月27日 - 18:07</p>
+  <p><span>原始链接:</span><a href="/2019/07/27/git/" title="git常用命令">https://www.zhongsir.online/2019/07/27/git/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhongsir.online/2019/07/27/git/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+	  $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });
+</script>
+
+
+      
+    </div>
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/26/哲学家进餐问题/" rel="next" title="哲学家进餐问题">
+                <i class="fa fa-chevron-left"></i> 哲学家进餐问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="flowerLang">
+            
+              <p class="site-author-name" itemprop="name">flowerLang</p>
+              <p class="site-description motion-element" itemprop="description">静坐常思己过，闲聊莫论人非</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/flowerLang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://encounter-music.cn:88" target="_blank" title="Music">
+                      
+                        <i class="fa fa-fw fa-music"></i>Music</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装和配置"><span class="nav-number">1.</span> <span class="nav-text">一、安装和配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-安装"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-配置"><span class="nav-number">2.</span> <span class="nav-text">1.2 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、创建仓库"><span class="nav-number">3.</span> <span class="nav-text">二、创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-初始化"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-克隆"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 克隆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、基本用法"><span class="nav-number">4.</span> <span class="nav-text">三、基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-状态"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-添加跟踪"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 添加跟踪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-提交"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-日志和切换版本"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 日志和切换版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、三个状态"><span class="nav-number">5.</span> <span class="nav-text">四、三个状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、tag标签"><span class="nav-number">6.</span> <span class="nav-text">五、tag标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-git-tag"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 git tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-git-show"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 git show</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、分支branch"><span class="nav-number">7.</span> <span class="nav-text">六、分支branch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-创建分支"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-切换分支"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-图形化显示"><span class="nav-number">7.3.</span> <span class="nav-text">6.3 图形化显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-创建并切换至分支"><span class="nav-number">7.4.</span> <span class="nav-text">6.4 创建并切换至分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、合并分支"><span class="nav-number">8.</span> <span class="nav-text">七、合并分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、远程仓库"><span class="nav-number">9.</span> <span class="nav-text">七、远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-添加仓库"><span class="nav-number">9.1.</span> <span class="nav-text">7.1 添加仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-将本地仓库上传"><span class="nav-number">9.2.</span> <span class="nav-text">7.2 将本地仓库上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-克隆仓库"><span class="nav-number">9.3.</span> <span class="nav-text">7.3 克隆仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八、速查表"><span class="nav-number">10.</span> <span class="nav-text">八、速查表</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">flowerLang</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i>
+<span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.2k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+      <script color="0,0,255" opacity="0.7" zindex="-2" count="99" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+      </script>
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/click.js"></script>
+
+</html>

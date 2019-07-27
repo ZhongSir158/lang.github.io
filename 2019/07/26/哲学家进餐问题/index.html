@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="经典同步问题——五位哲学家进餐    一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。">
+<meta name="description" content="一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。 各个状态： S1 思考中…  S2">
 <meta name="keywords" content="pv同步互斥">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哲学家进餐问题">
 <meta property="og:url" content="https://www.zhongsir.online/2019/07/26/哲学家进餐问题/index.html">
-<meta property="og:site_name" content="flowerLang&#39;s blog">
-<meta property="og:description" content="经典同步问题——五位哲学家进餐    一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。">
+<meta property="og:site_name" content="flowerLang-个人博客">
+<meta property="og:description" content="一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。 各个状态： S1 思考中…  S2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-26T09:34:41.261Z">
+<meta property="og:updated_time" content="2019-07-27T09:20:00.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哲学家进餐问题">
-<meta name="twitter:description" content="经典同步问题——五位哲学家进餐    一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。">
+<meta name="twitter:description" content="一、问题描述 （1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；  二、解决思路指导原则： 不能浪费CPU时间； 进程间相互通信。 各个状态： S1 思考中…  S2">
 
 
 
@@ -113,9 +113,9 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -141,7 +141,7 @@
 
 
 
-  <title>哲学家进餐问题 | flowerLang's blog</title>
+  <title>哲学家进餐问题 | flowerLang-个人博客</title>
   
 
 
@@ -171,7 +171,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">flowerLang's blog</span>
+        <span class="site-title">flowerLang-个人博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -253,11 +253,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="flowerLang">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://avatars0.githubusercontent.com/u/43001463?s=460&v=4">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="flowerLang's blog">
+      <meta itemprop="name" content="flowerLang-个人博客">
     </span>
 
     
@@ -333,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  746
+                  733
                 </span>
               
 
@@ -370,11 +370,7 @@
       
 
       
-        <center><h1>经典同步问题——五位哲学家进餐</h1></center>
-
-
-
-<h2 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h2><blockquote>
+        <h2 id="一、问题描述"><a href="#一、问题描述" class="headerlink" title="一、问题描述"></a>一、问题描述</h2><blockquote>
 <p>（1965 年由Dijkstra提出解决） 5 个学家围绕一张圆桌而坐，桌子上放着5支叉子，每两个哲学家之间放一支；哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和石边的两支叉子， 思老时则同时将两支叉子放回原处。如何保证哲学家们的动作有序进行？如：不出现有人永远拿不到叉子；</p>
 </blockquote>
 <h2 id="二、解决思路"><a href="#二、解决思路" class="headerlink" title="二、解决思路"></a>二、解决思路</h2><p><strong>指导原则</strong>： 不能浪费CPU时间； 进程间相互通信。</p>
@@ -422,7 +418,7 @@
   <p><span>本文标题:</span><a href="/2019/07/26/哲学家进餐问题/">哲学家进餐问题</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 flowerLang 的个人博客">flowerLang</a></p>
   <p><span>发布时间:</span>2019年07月26日 - 17:07</p>
-  <p><span>最后更新:</span>2019年07月26日 - 17:07</p>
+  <p><span>最后更新:</span>2019年07月27日 - 17:07</p>
   <p><span>原始链接:</span><a href="/2019/07/26/哲学家进餐问题/" title="哲学家进餐问题">https://www.zhongsir.online/2019/07/26/哲学家进餐问题/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhongsir.online/2019/07/26/哲学家进餐问题/" aria-label="复制成功！"></i></span>
   </p>
@@ -466,6 +462,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/27/git/" rel="prev" title="git常用命令">
+                git常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -528,7 +540,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://avatars0.githubusercontent.com/u/43001463?s=460&v=4" alt="flowerLang">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="flowerLang">
             
               <p class="site-author-name" itemprop="name">flowerLang</p>
               <p class="site-description motion-element" itemprop="description">静坐常思己过，闲聊莫论人非</p>
@@ -541,7 +553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -563,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -596,7 +608,6 @@
 
           
           
-
           
 
         </div>
@@ -612,7 +623,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text">经典同步问题——五位哲学家进餐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">一、问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、解决思路"><span class="nav-number">1.2.</span> <span class="nav-text">二、解决思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、具体代码"><span class="nav-number">1.3.</span> <span class="nav-text">三、具体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-变量解释"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 变量解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-函数状态架构"><span class="nav-number">1.4.</span> <span class="nav-text">3.2 函数状态架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-各个子函数的实现及其功能"><span class="nav-number">1.5.</span> <span class="nav-text">3.3 各个子函数的实现及其功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-test-take-left-right-forks"><span class="nav-number">1.5.1.</span> <span class="nav-text">3.3.1 test_take_left_right_forks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-take-forks"><span class="nav-number">1.5.2.</span> <span class="nav-text">3.3.2 take_forks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-put-forks"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.3.3 put_forks</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、问题描述"><span class="nav-number">1.</span> <span class="nav-text">一、问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、解决思路"><span class="nav-number">2.</span> <span class="nav-text">二、解决思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、具体代码"><span class="nav-number">3.</span> <span class="nav-text">三、具体代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-变量解释"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 变量解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-函数状态架构"><span class="nav-number">4.</span> <span class="nav-text">3.2 函数状态架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-各个子函数的实现及其功能"><span class="nav-number">5.</span> <span class="nav-text">3.3 各个子函数的实现及其功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-test-take-left-right-forks"><span class="nav-number">5.1.</span> <span class="nav-text">3.3.1 test_take_left_right_forks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-take-forks"><span class="nav-number">5.2.</span> <span class="nav-text">3.3.2 take_forks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-put-forks"><span class="nav-number">5.3.</span> <span class="nav-text">3.3.3 put_forks</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -621,7 +632,13 @@
       
 
       
-
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
     </div>
   </aside>
 
@@ -657,7 +674,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共746字</span>
+  <span class="post-count">博客全站共2.2k字</span>
 </div>
 
         
@@ -672,11 +689,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -765,6 +777,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
