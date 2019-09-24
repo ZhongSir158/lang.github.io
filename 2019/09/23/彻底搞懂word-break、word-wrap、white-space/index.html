@@ -102,10 +102,12 @@
 <meta property="og:site_name" content="flowerLang-个人博客">
 <meta property="og:description" content="测试代码下面是本文中用于测试三个样式属性展现情况的html代码： 1234567&amp;lt;div id=&quot;box&quot;&amp;gt;  Hi&amp;amp;nbsp;&amp;amp;nbsp;,  This   is a incomprehensibilities long word.  &amp;lt;/br&amp;gt;  你好&amp;amp;nbsp;&amp;amp;nbsp;，  这   是一个不可思议的长单词&amp;lt;/div&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T03:43:38.355Z">
+<meta property="og:image" content="https://www.zhongsir.online/.online//init.png">
+<meta property="og:updated_time" content="2019-09-24T03:49:23.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="彻底搞懂word-break、word-wrap、white-space">
 <meta name="twitter:description" content="测试代码下面是本文中用于测试三个样式属性展现情况的html代码： 1234567&amp;lt;div id=&quot;box&quot;&amp;gt;  Hi&amp;amp;nbsp;&amp;amp;nbsp;,  This   is a incomprehensibilities long word.  &amp;lt;/br&amp;gt;  你好&amp;amp;nbsp;&amp;amp;nbsp;，  这   是一个不可思议的长单词&amp;lt;/div&amp;gt;">
+<meta name="twitter:image" content="https://www.zhongsir.online/.online//init.png">
 
 
 
@@ -374,7 +376,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"box"</span>&gt;</span><br><span class="line">  Hi&amp;nbsp;&amp;nbsp;,</span><br><span class="line">  This   is a incomprehensibilities long word.</span><br><span class="line">  &lt;<span class="regexp">/br&gt;</span></span><br><span class="line"><span class="regexp">  你好&amp;nbsp;&amp;nbsp;，</span></span><br><span class="line"><span class="regexp">  这   是一个不可思议的长单词</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
 
 <p>现在只给了它一个宽度和边框，没有其它任何样式，下面是它目前的展现情况:</p>
-<p>![init](E:\gitBlog\git pages\source_posts\彻底搞懂word-break、word-wrap、white-space\init.png)</p>
+<p><img src="/.online//init.png" alt="init"></p>
 <p>可以看到，<code>nbsp;</code>和<code>&lt;/br&gt;</code>可以正常发挥作用，而连续的空格会被缩减成一个（比如This和is之间的三个空格变成了一个），换行符也全都无效。句子超过一行后会自动换行，而长度超过一行的单个单词会超出边界。<br>接下来我们看下， 给它上面三个css属性赋值后会出现什么变化。</p>
 <h1 id="white-space"><a href="#white-space" class="headerlink" title="white-space"></a>white-space</h1><p>正如它的名字，<strong>这个属性是用来控制空白字符的显示的</strong>，同时还能控制是否自动换行。它有五个值：<code>normal | nowrap | pre | pre-wrap | pre-line</code>。因为默认是<code>normal</code>，所以我们主要研究下其它四种值时的展现情况。</p>
 <p>（为了方便比较，下文所有图，左侧为<code>normal</code>即初始情况，右侧为赋上相应值时的情况）</p>
