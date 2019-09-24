@@ -102,10 +102,12 @@
 <meta property="og:site_name" content="flowerLang-个人博客">
 <meta property="og:description" content="构造函数创建实例对象（先有构造函数，再有实例对象）构造函数内创建的变量和函数属于实例对象的一部分，不属于构造函数,而通过原型添加的变量和方法存在于构造函数中，他们是共享的  123456789101112&amp;gt;&amp;gt;function Person(age,sex)&amp;#123;&amp;gt;&amp;gt;  this.age = age;&amp;gt;&amp;gt;  this.sex = sex;&amp;gt;&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T01:29:57.305Z">
+<meta property="og:image" content="https://www.zhongsir.online/2019/05/10/原型及原型链/%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg">
+<meta property="og:updated_time" content="2019-09-24T09:18:25.250Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型及原型链">
 <meta name="twitter:description" content="构造函数创建实例对象（先有构造函数，再有实例对象）构造函数内创建的变量和函数属于实例对象的一部分，不属于构造函数,而通过原型添加的变量和方法存在于构造函数中，他们是共享的  123456789101112&amp;gt;&amp;gt;function Person(age,sex)&amp;#123;&amp;gt;&amp;gt;  this.age = age;&amp;gt;&amp;gt;  this.sex = sex;&amp;gt;&amp;gt;">
+<meta name="twitter:image" content="https://www.zhongsir.online/2019/05/10/原型及原型链/%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg">
 
 
 
@@ -407,7 +409,7 @@
 <p><strong>方法二</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Per</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Per.prototype.sex = <span class="string">'nv'</span>;</span><br><span class="line">Per.prototype.age = <span class="number">12</span>;</span><br><span class="line">Per.prototype.play = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'玩哟西'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> Per.prototype)</span><br><span class="line">&#123;</span><br><span class="line">  obj[key]=Per.prototype[key];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>原型链是实例对象和原型对象（<code>prototype</code>）之间的一种关系（<code>实例对象中的原型__proto__指向构造函数的原型对象prototype</code>），这个关系是通过实例对象的原型（<code>__proto__</code>）来联系的。<br>![原型链](E:\gitBlog\git pages\source_posts\原型及原型链\原型链.jpg)</p>
+<h2 id="二、原型链"><a href="#二、原型链" class="headerlink" title="二、原型链"></a>二、原型链</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>原型链是实例对象和原型对象（<code>prototype</code>）之间的一种关系（<code>实例对象中的原型__proto__指向构造函数的原型对象prototype</code>），这个关系是通过实例对象的原型（<code>__proto__</code>）来联系的。<br><img src="%E5%8E%9F%E5%9E%8B%E9%93%BE.jpg" alt="原型链"></p>
 <h4 id="原型的指向可以改变"><a href="#原型的指向可以改变" class="headerlink" title="原型的指向可以改变"></a>原型的指向可以改变</h4><blockquote>
 <p>如果构造函数的原型对象（prototype）指向改变，那么实例对象中的原型<code>__proto__</code>指向也会改变，其中实例对象与原型对象之间的连接关系就是原型链</p>
 </blockquote>
@@ -436,7 +438,7 @@
   <p><span>本文标题:</span><a href="/2019/05/10/原型及原型链/">原型及原型链</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 flowerLang 的个人博客">flowerLang</a></p>
   <p><span>发布时间:</span>2019年05月10日 - 14:05</p>
-  <p><span>最后更新:</span>2019年09月24日 - 09:09</p>
+  <p><span>最后更新:</span>2019年09月24日 - 17:09</p>
   <p><span>原始链接:</span><a href="/2019/05/10/原型及原型链/" title="原型及原型链">https://www.zhongsir.online/2019/05/10/原型及原型链/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://www.zhongsir.online/2019/05/10/原型及原型链/" aria-label="复制成功！"></i></span>
   </p>
