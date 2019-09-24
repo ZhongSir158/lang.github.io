@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JavaScript Study Note-11、匿名函数   基本形式 结构说明 作用    (function(){...})(); 前面的括号包括函数体，后面的括号给匿名函数传递参数并立即执行 避免全局变量的污染以及函数名的冲突   ;(function(){...})(); 与第一个形式有点区别是多了一个分号 那个分号是为了给前一个依赖文件擦屁股，js文件压缩时会依次将不同文件连接起来，然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flowerLang-个人博客">
+<meta property="og:url" content="https://www.zhongsir.online/2019/08/21/JavaScript Study Note-1/index.html">
+<meta property="og:site_name" content="flowerLang-个人博客">
+<meta property="og:description" content="JavaScript Study Note-11、匿名函数   基本形式 结构说明 作用    (function(){...})(); 前面的括号包括函数体，后面的括号给匿名函数传递参数并立即执行 避免全局变量的污染以及函数名的冲突   ;(function(){...})(); 与第一个形式有点区别是多了一个分号 那个分号是为了给前一个依赖文件擦屁股，js文件压缩时会依次将不同文件连接起来，然">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-28T14:02:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flowerLang-个人博客">
+<meta name="twitter:description" content="JavaScript Study Note-11、匿名函数   基本形式 结构说明 作用    (function(){...})(); 前面的括号包括函数体，后面的括号给匿名函数传递参数并立即执行 避免全局变量的污染以及函数名的冲突   ;(function(){...})(); 与第一个形式有点区别是多了一个分号 那个分号是为了给前一个依赖文件擦屁股，js文件压缩时会依次将不同文件连接起来，然">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.zhongsir.online/2019/08/21/JavaScript Study Note-1/">
+
+
+
+
+
+  <title> | flowerLang-个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">flowerLang-个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">花语者</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zhongsir.online/2019/08/21/JavaScript Study Note-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowerLang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="flowerLang-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T07:51:32+08:00">
+                2019-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript-Study-Note-1"><a href="#JavaScript-Study-Note-1" class="headerlink" title="JavaScript Study Note-1"></a>JavaScript Study Note-1</h1><h2 id="1、匿名函数"><a href="#1、匿名函数" class="headerlink" title="1、匿名函数"></a>1、匿名函数</h2><table>
+<thead>
+<tr>
+<th align="left">基本形式</th>
+<th align="center">结构说明</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>(function(){...})();</code></td>
+<td align="center">前面的括号包括函数体，后面的括号给匿名函数<code>传递参数并立即执行</code></td>
+<td align="center">避免全局变量的污染以及函数名的冲突</td>
+</tr>
+<tr>
+<td align="left"><code>;(function(){...})();</code></td>
+<td align="center">与第一个形式有点区别是多了一个<strong>分号</strong></td>
+<td align="center">那个分号是为了给前一个依赖文件擦屁股，js文件压缩时会依次将不同文件连接起来，然后去掉所有空格断行注释之类的东西，这样一来两个文件前后就黏一块了。</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>; ==&gt;<span class="built_in">window</span>.a = <span class="number">1</span>; <span class="comment">//这样定义一个变量会污染系统全局变量</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;  <span class="comment">//局部变量a</span></span><br><span class="line">&#125;)(); <span class="comment">//这个‘（）’用于立即执行匿名函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>其他函数形式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line">  ...</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2、作用域"><a href="#2、作用域" class="headerlink" title="2、作用域"></a>2、作用域</h2><h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><blockquote>
+<p>在浏览器解析代码之前，把变量的声明和函数的声明提前到该作用域的最上面</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(num); <span class="comment">//undefined 因为只是将num声明提前，并未解析该代码</span></span><br><span class="line"><span class="keyword">var</span> num=<span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">f1(); <span class="comment">// 这个函数执行了    函数f1()声明被提前了</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'这个函数执行了'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意下面一段代码</span></span><br><span class="line">f2(); <span class="comment">//报错  因为只是将var f2;声明提前，并未加载其函数内容</span></span><br><span class="line"><span class="keyword">var</span> f2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'这个函数未被执行'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//应改为</span></span><br><span class="line"><span class="keyword">var</span> f2;</span><br><span class="line">f2=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'执行了'</span>);</span><br><span class="line">&#125;</span><br><span class="line">f2();</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-0-作用域链"><a href="#2-0-作用域链" class="headerlink" title="2.0 作用域链"></a>2.0 作用域链</h3><blockquote>
+<p>函数使用变量时，从里向外，层层搜索，搜索到了就直接使用<br><br>从高级作用域至低级作用域层层搜索，若搜索到0级作用域还没找到这个变量，这是会报错</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;  <span class="comment">//作用域 级别0</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">20</span>;  <span class="comment">//作用域 级别1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">30</span>;  <span class="comment">//作用域 级别2</span></span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">  &#125;</span><br><span class="line">  f2();</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-延长作用域链"><a href="#2-1-延长作用域链" class="headerlink" title="2.1 延长作用域链"></a>2.1 延长作用域链</h3><blockquote>
+<p>一般情况下执行环境的类型只有两种–全局和局部（函数），但还有其他方法来延长作用域链。</p>
+<p>这么说是因为有些语句可以在作用域链的前端临时增加一个变量对象，该变量对象会在代码执行后被移除。在两种情况下会发生这种现象。具体来说，就是当执行流进入下列任何一个语句时，作用域链就会得到加长：</p>
+<ul>
+<li><input checked disabled type="checkbox"> <p><code>try-catch 语句的 catch 块</code></p>
+</li>
+<li><input checked disabled type="checkbox"> <p><code>with语句</code></p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>例子</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildUrl</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="keyword">var</span> qs = <span class="string">"?debug=true"</span>;</span><br><span class="line"> <span class="keyword">with</span>(location)&#123; <span class="comment">//lacation为对象名</span></span><br><span class="line"> <span class="keyword">var</span> url = href + qs;  <span class="comment">//href实际为location.href</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中可以注意到，本来url若没用with语句将他包围，则其作用域是就在那个语句块内，不能使用return语句将他返回，但现在用了with语句，这时url的作用域与with语句的作用域相等（延长了url的作用域），故可以返回url。</p>
+<h3 id="2-2-没有块级作用域"><a href="#2-2-没有块级作用域" class="headerlink" title="2.2 没有块级作用域"></a>2.2 没有块级作用域</h3><blockquote>
+<p><strong>JavaScript 没有块级作用域</strong>经常会导致理解上的困惑。在其他类 C 的语言中，由花括号封闭的代码<br>块都有自己的作用域（如果用 ECMAScript 的话来讲，就是它们自己的执行环境），因而支持根据条件来<br>定义变量。例如，下面的代码在 JavaScript 中并不会得到想象中的结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">&gt; <span class="keyword">var</span> color = <span class="string">"blue"</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; alert(color); <span class="comment">//"blue"</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>如果是在 C、C++或 Java 中，color 会在 if 语句执行完毕后被销毁。</p>
+<p>但在 JavaScript 中，<strong>if 语句中的变量声明</strong>会将<strong>变量添加到当前的执行环境</strong>（在这里是全局环境）中。</p>
+<p>在使用 for 语句时尤其要牢记这一差异，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">&gt; doSomething(i);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; alert(i); <span class="comment">//10</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>对于<strong>有块级作用域的语言</strong>来说，for 语句初始化变量的表达式所定义的变量，只会存在于<strong>循环的环<br>境</strong>之中。而对于<strong>JavaScript</strong> 来说，由 for 语句创建的变量 i 即使在 for 循环执行结束后，也依旧会存在<br>于循环外部的执行环境中。</p>
+</blockquote>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>用 <em>var</em> 声明的变量会被自动的添加到最接近的环境中，<strong>未使用 <em>var</em> 声明的变量为全局变量</strong>。</p>
+<ul>
+<li><b>例子</b></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line"> total = num1 + num2;</span><br><span class="line"> <span class="keyword">var</span> sum = num1 + num2;</span><br><span class="line"> <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> result = add(<span class="number">10</span>, <span class="number">20</span>); <span class="comment">//30</span></span><br><span class="line">alert(sum); <span class="comment">//由于 sum 不是有效的变量，因此会导致错误</span></span><br><span class="line">alert(total); <span class="comment">//total为全局变量，正常调用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3、闭包"><a href="#3、闭包" class="headerlink" title="3、闭包"></a>3、闭包</h2><p><code>描述</code> <strong>闭包</strong>是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式，就是在一个函数内部创建另一个函数。<em>It is useless to say too much.Let’s see the example</em></p>
+<p><code>作用</code></p>
+<p>延长作用域链     </p>
+<p>缓存数据</p>
+<ul>
+<li><p><strong>例子1</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">user</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> age,sex;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        getName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> name;</span><br><span class="line">        &#125;,</span><br><span class="line">        setName : <span class="function"><span class="keyword">function</span>(<span class="params">n</span>)</span>&#123; <span class="comment">//定义函数的一种表达形式</span></span><br><span class="line">            name = n;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'nihao'</span>;</span><br><span class="line"><span class="keyword">var</span> User = user(name);  <span class="comment">//User 现在是一个闭包</span></span><br><span class="line"><span class="built_in">console</span>.log(User.getName());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>例子2</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> tmp = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">y</span>) </span>&#123;</span><br><span class="line">        alert(x + y + (++tmp));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = foo(<span class="number">2</span>); <span class="comment">// bar 现在是一个闭包</span></span><br><span class="line">bar(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p><strong>例子3</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span></span>&#123;</span><br><span class="line">        num++;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> ff=f1();</span><br><span class="line"><span class="built_in">console</span>.log(ff()); <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">console</span>.log(ff()); <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/27/git/" rel="next" title="git常用命令">
+                <i class="fa fa-chevron-left"></i> git常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/JavaScript-常见window使用注意事项/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="flowerLang">
+            
+              <p class="site-author-name" itemprop="name">flowerLang</p>
+              <p class="site-description motion-element" itemprop="description">静坐常思己过，闲聊莫论人非</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/flowerLang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://encounter-music.cn:88" target="_blank" title="Music">
+                      
+                        <i class="fa fa-fw fa-music"></i>Music</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-Study-Note-1"><span class="nav-number">1.</span> <span class="nav-text">JavaScript Study Note-1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、匿名函数"><span class="nav-number">1.1.</span> <span class="nav-text">1、匿名函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、作用域"><span class="nav-number">1.2.</span> <span class="nav-text">2、作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预解析"><span class="nav-number">1.2.1.</span> <span class="nav-text">预解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-0-作用域链"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.0 作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-延长作用域链"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.1 延长作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-没有块级作用域"><span class="nav-number">1.2.4.</span> <span class="nav-text">2.2 没有块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量"><span class="nav-number">1.2.5.</span> <span class="nav-text">声明变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、闭包"><span class="nav-number">1.3.</span> <span class="nav-text">3、闭包</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">flowerLang</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i>
+<span id="busuanzi_container_site_pv">
+  本站访客数:<span id="busuanzi_value_site_pv"></span>
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共14.8k字</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+      <script color="0,0,255" opacity="0.7" zindex="-2" count="99" type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+      </script>
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/click.js"></script>
+
+</html>

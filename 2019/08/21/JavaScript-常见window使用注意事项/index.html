@@ -94,16 +94,17 @@
 
 
 
-<meta name="description" content="静坐常思己过，闲聊莫论人非">
-<meta property="og:type" content="website">
+<meta name="description" content="JavaScript之window对象注意事项setInterVal()与clearInterval()同时使用 情况1：用他们显示循环几次并且要跳出循环时，会比条件大1  例子 123456789var count = 0;var timer = setInterVal(function()&amp;#123;    count++;    if(count &amp;gt; 3)&amp;#123;      cle">
+<meta property="og:type" content="article">
 <meta property="og:title" content="flowerLang-个人博客">
-<meta property="og:url" content="https://www.zhongsir.online/archives/2019/07/index.html">
+<meta property="og:url" content="https://www.zhongsir.online/2019/08/21/JavaScript-常见window使用注意事项/index.html">
 <meta property="og:site_name" content="flowerLang-个人博客">
-<meta property="og:description" content="静坐常思己过，闲聊莫论人非">
+<meta property="og:description" content="JavaScript之window对象注意事项setInterVal()与clearInterval()同时使用 情况1：用他们显示循环几次并且要跳出循环时，会比条件大1  例子 123456789var count = 0;var timer = setInterVal(function()&amp;#123;    count++;    if(count &amp;gt; 3)&amp;#123;      cle">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-10T01:25:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flowerLang-个人博客">
-<meta name="twitter:description" content="静坐常思己过，闲聊莫论人非">
+<meta name="twitter:description" content="JavaScript之window对象注意事项setInterVal()与clearInterval()同时使用 情况1：用他们显示循环几次并且要跳出循环时，会比条件大1  例子 123456789var count = 0;var timer = setInterVal(function()&amp;#123;    count++;    if(count &amp;gt; 3)&amp;#123;      cle">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://www.zhongsir.online/archives/2019/07/">
+  <link rel="canonical" href="https://www.zhongsir.online/2019/08/21/JavaScript-常见window使用注意事项/">
 
 
 
 
 
-  <title>归档 | flowerLang-个人博客</title>
+  <title> | flowerLang-个人博客</title>
   
 
 
@@ -158,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -232,107 +233,197 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 11 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.zhongsir.online/2019/08/21/JavaScript-常见window使用注意事项/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="flowerLang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="flowerLang-个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/07/27/git/" itemprop="url">
-              
-                <span itemprop="name">git常用命令</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-27T10:15:35+08:00" content="2019-07-27">
-          07-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T07:51:32+08:00">
+                2019-08-21
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  232
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/26/哲学家进餐问题/" itemprop="url">
-              
-                <span itemprop="name">哲学家进餐问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-26T17:33:05+08:00" content="2019-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h2 id="JavaScript之window对象注意事项"><a href="#JavaScript之window对象注意事项" class="headerlink" title="JavaScript之window对象注意事项"></a>JavaScript之window对象注意事项</h2><h3 id="setInterVal-与clearInterval-同时使用"><a href="#setInterVal-与clearInterval-同时使用" class="headerlink" title="setInterVal()与clearInterval()同时使用"></a>setInterVal()与clearInterval()同时使用</h3><ul>
+<li>情况1：用他们显示循环几次并且要跳出循环时，会比条件大1</li>
+</ul>
+<p><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> timer = setInterVal(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="keyword">if</span>(count &gt; <span class="number">3</span>)&#123;</span><br><span class="line">      clearInterval(timer);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(count); <span class="comment">//1、2、3、4</span></span><br><span class="line">  &#125;,<span class="number">0</span> <span class="comment">//setInterVal有两个参数，第二个参数为时间间隔</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因</strong>：当<code>count = 4</code>时，执行<code>clearInterval(timer)</code>语句，但他要执行完这最后一遍<br>代码，所以会输出4。</p>
+<p><strong>修改方案</strong>:<code>clearInterval(timer);</code>后加上<code>return;</code>就可以了。</p>
+<h3 id="setTimeOut-注意事项"><a href="#setTimeOut-注意事项" class="headerlink" title="setTimeOut()注意事项"></a>setTimeOut()注意事项</h3><p><em>当setTimeOut()函数与其他函数使用时，要注意执行顺序</em><br><strong>例子</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">setTimeOut(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'时间到了'</span>);</span><br><span class="line">  &#125;,<span class="number">0</span></span><br><span class="line">);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hhh"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"nihao"</span>);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">结果为：hhh nihao 时间到了</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>原因</strong>：setTimeOut()函数里的<strong>function</strong>并不是始终和其他两个console.log()函数一样，在同一个段位里，<br>所以他的执行顺序始终要低于它们两；setInterVal也是如此</p>
+
+      
     </div>
+    
+    
+    
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/21/JavaScript Study Note-1/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/this小试牛刀/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -340,6 +431,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -360,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -438,6 +542,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript之window对象注意事项"><span class="nav-number">1.</span> <span class="nav-text">JavaScript之window对象注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setInterVal-与clearInterval-同时使用"><span class="nav-number">1.1.</span> <span class="nav-text">setInterVal()与clearInterval()同时使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setTimeOut-注意事项"><span class="nav-number">1.2.</span> <span class="nav-text">setTimeOut()注意事项</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -595,6 +715,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
